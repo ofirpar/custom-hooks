@@ -3,9 +3,11 @@ import { ToggleButton } from "../ToggleButton/ToggleButton";
 import { MyUseCallback } from "../../custom-hooks/custom-use-callback";
 import { useKeyboard } from "../../custom-hooks/use-keyboard";
 import "./Playground.css";
+import { UseDebounceComponent } from "./UseDebounce";
 
 const Playground = () => {
   const [isToggled, setIsToggled] = useState(false);
+
   useKeyboard(["a"], (char) => console.log(`Key ${char} pressed!`));
 
   // Memoize the toggle function with useCallback to prevent unnecessary re-renders of the child
@@ -23,6 +25,7 @@ const Playground = () => {
       <div id="use-keyboard-example-1">
         <h4>Press "a" to see the message in the console!</h4>
       </div>
+      <UseDebounceComponent />
     </div>
   );
 };
